@@ -10,9 +10,10 @@ int main()
 	int arr2[M][M];
 	int arr3[M][M];
 	int i, j, k;
-
+	//ç§ä¸‹éšæœºæ•°ç§å­
 	srand((unsigned int)time(NULL));
-	cout << "¾ØÕó1Îª£º" << endl;
+	cout << "çŸ©é˜µ1ä¸ºï¼š" << endl;
+	//ç»™arr1èµ‹å€¼
 	for (i = 0; i < M; i++)
 	{
 		for (j = 0; j < M; j++)
@@ -22,7 +23,8 @@ int main()
 		}
 		cout << '\n';
 	}
-	cout << "¾ØÕó2Îª£º" << endl;
+	cout << "çŸ©é˜µ2ä¸ºï¼š" << endl;
+	//ç»™arr2èµ‹å€¼
 	for (i = 0; i < M; i++)
 	{
 		for (j = 0; j < M; j++)
@@ -32,7 +34,7 @@ int main()
 		}
 		cout << '\n';
 	}
-
+	//å®ç°çŸ©é˜µä¹˜æ³•
 	for (i = 0; i < M; i++)
 	{
 		for (j = 0; j < M; j++)
@@ -44,7 +46,7 @@ int main()
 			}
 		}
 	}
-	cout << "¾ØÕó3Îª£º\n";
+	cout << "çŸ©é˜µ3ä¸ºï¼š\n";
 	for (i = 0; i < M; i++)
 	{
 		for (j = 0; j < M; j++)
