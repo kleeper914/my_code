@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <style>
+        /* 类选择器,head2样式表 */
+        .head2{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            font-family: "华文行楷";
+            background-color: dimgrey;
+            width: 100%;
+            height: 60px;
+            margin: 0px;
+        }
+        /* id选择器 */
+        #section-left{
+            /* 设置边框圆角 */
+            border-radius: 30px;
+            border: 3px;
+            border-style: solid;
+            width: 33%;
+            height: 1024px;
+            /* 设置背景图片 */
+            background-image: url(https://ts1.cn.mm.bing.net/th/id/R-C.efa2833c075be127f22e67719bb5d51f?rik=zSa9ioKo67kAYw&riu=http%3a%2f%2fimg.ewebweb.com%2fuploads%2f20200102%2f20%2f1577967911-MTNrZWaeVw.jpg&ehk=CCJ4o5Ug6%2bTkyAMOW9AGyBYhf3OodQ2mYKpamX7w6Ag%3d&risl=&pid=ImgRaw&r=0);
+            margin: 0px;
+        }
+        /* 父子选择器，选择table中所有th */
+        table th{
+            font-size: 60px;
+        }
+        /* 元素选择器，设置td样式表 */
+        td{
+            color: darkred;
+            font-size:40px;
+        }
+        /* id选择器 */
+        #section-right{
+            border-radius: 30px;
+            border-style: solid;
+            width: 33%;
+            height: 1024px;
+            margin: 0px;
+            /* 设置背景图片 */
+            background-image: url(https://pic.qqtn.com/up/2018-5/15268969082344144.jpg);
+        }
+        /* 选择section-right下所有的h2 */
+        #section-right>h2{
+                color: red;
+                text-align: center;
+        }
+        /* 选择section-right下所有的h2 */
+        #section-right>span{
+            font-size: 40px;
+        }
+        /* id选择器 */
+        #section-center{
+            width: 33%;
+            height: 1024px;
+            border: 3px;
+            border-radius: 30px;
+            border-style: dashed;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1 class="head2">浪河之声</h1>
+    <!-- 使子元素按行排列 -->
+    <div style="display: flex;flex-direction: row;">
+        <div id="section-left">
+            <h2 style="text-align: center">favorite</h2>
+            <!-- 表格，设置边框 -->
+            <table border="1">
+                <!-- 设置文字居中 -->
+                <th align="center">
+                    语种
+                </th>
+                <th align="center">
+                    歌名
+                </th>
+                <tr>
+                    <td>
+                        华 语
+                    </td>
+                    <td>
+                        花海 稻香 一路向北 夜曲 蒲公英的约定
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        欧 美
+                    </td>
+                    <td>
+                        Some Like You | Viva La Vida |
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+            <h2 style="text-align: center">自己剪的小vlog</h2>
+            <!-- controls设置音频由访问者控制播放 -->
+            <video width="100%" height="400px" controls="">
+                <source src="/video/short_video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        
+        <div id="section-center">
+            <a href="mailto:845512161@qq.com" style="font-size: 50px;">发送邮件</a>
+            <br><br><br>
+            <span>请输入北邮url</span>
+            <input type="text" name="openWebsite" id="inputWebsite">
+            <br><br>
+            <!-- 绑定一个onclick事件函数 -->
+            <button onclick="clickUpload()">点击验证</button>
+            <br><br><br>
+            <!-- 设置超链接不可视 -->
+            <a href="https://www.bupt.edu.cn/" id="bupt" style="visibility: hidden;">点击跳转</a>
+            <script>
+                function clickUpload(){
+                    // 获取id为bupt的元素对象并赋给obj
+                    var obj = document.getElementById('bupt');
+                    // 创建字符串
+                    var website = "https://www.bupt.edu.cn/";
+                    // 获取input中输入的内容并赋给inputWebsite
+                    var inputWebsite = document.getElementById('inputWebsite').value
+                    // 条件判断，若输入的内容为北邮网址，则提示输入正确，并使超链接可视
+                    if(inputWebsite == website)
+                    {
+                       alert('输入正确');
+                       //修改超链接visibility属性为visible，实现超链接可视
+                       obj.style.visibility = "visible";
+                    }
+               }
+            </script>
+            <br><br><br>
+            <a href="./page2.html" style="font-size: 50px;">点此跳转至下一页面</a>
+            <br><br>
+            <a href="./startmenu.html" style="font-size: 50px;">点此跳转至菜单页面</a>
+        </div>
+
+        <div id="section-right">
+            <h2>免 费 收 听</h1>
+            <br>
+            <span>欢乐颂</span>
+            <br>
+            <!-- controls设置音频由访问者控制播放 -->
+            <audio controls="" src="https://ea-sycdn.kuwo.cn/478986ea737c9dbcb855b8f0dcba7ed6/63412a4a/resource/n3/42/33/2826433386.mp3"></audio>
+            <br>
+            <br>
+            <span>柔らかな手</span>
+            <br>
+            <audio controls="" src="https://sr-sycdn.kuwo.cn/c418d8b618db7ea2a33bdbb73c86bb96/63412ae4/resource/n2/44/16/3545191612.mp3"></audio>
+            <br>
+            <br>
+            <span>Someone Like You</span>
+            <br>
+            <audio controls="" src="https://ip-h5-ri01-sycdn.kuwo.cn/f23c651603d2fdbf70cbbe63c61876cc/63424086/resource/n2/79/0/2591806824.mp3"></audio>
+            <br>
+            <br>
+            <span>海阔天空</span>
+            <br>
+            <audio controls="" src="http://lp.sycdn.kuwo.cn/162a3b78464dba3a399080ff17b39142/634241a9/resource/n1/54/80/3189549952.mp3"></audio>
+            <br>
+            <br>
+            <span>一路向北</span>
+            <br>
+            <audio controls="" src="http://sr.sycdn.kuwo.cn/03751104a09d3e1e56ffa8be059b2467/63424227/resource/n3/38/86/2397999236.mp3"></audio>
+            <br>
+            <br>
+            <span>十年</span>
+            <br>
+            <audio controls="" src="http://win.web.nf01.sycdn.kuwo.cn/59e00d3729089cb6df9b21f9145eb77d/63424431/resource/n2/64/38/3536239008.mp3"></audio>
+            <br>
+            <br>
+            <span>最佳损友</span>
+            <br>
+            <audio controls="" src="http://win.web.ra01.sycdn.kuwo.cn/ac401179b4133dde8f58a24e05cde7af/634244a8/resource/n1/320/29/35/3871442167.mp3"></audio>
+        </div>
+    </div>
+</body>
+
+<!-- 老师不好意思，有些音乐放不出来 -->

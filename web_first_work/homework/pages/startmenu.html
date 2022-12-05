@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <style>
+        /* 类选择器,head1样式表 */
+        .head1{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            font-family: "华文行楷";
+            background-color: dimgrey;
+            width: 100%;
+            height: 60px;
+        }
+        /* 元素选择器，label样式表 */
+        label{
+            /* 使文字右对齐 */
+            text-align: right;
+            display: inline-block;
+            width: 40%;
+        }
+        /* id选择器，image样式表 */
+        #image{
+            /* 将子元素设为flex布局 */
+	        display: flex;
+	        justify-content: space-around;
+	        align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head1">欢迎来到我的网站</h1>
+        <form>
+            <!-- input输入字符 -->
+            <label>用户名为:</label><input type="text" name="Name"/>
+            <br>
+            <br>
+            <label>账号:</label><input type="text" name="accouunt-number"/>
+            <br>
+            <br>
+            <!-- input输入密码,输入值会显示为* -->
+            <label>密码:</label><input type="password" name="password"/>
+            <br>
+            <br>
+        </form>
+
+        <form>
+            <label style="width: 40%;">性别:</label>
+            <!-- radio单选框需保证name一致 -->
+            <input type="radio" name="sex" value="male"/><label style="width: auto;text-align: left;">男</label>
+            <input type="radio" name="sex" value="female"/><label style="width: auto;text-align: left;">女</label>
+            <input type="radio" name="sex" value="myth"/><label style="width: auto;text-align: left;">谜</label>
+        </form>
+        <br>
+        <form>
+            <label for="">喜好的音乐类型:</label>
+            <!-- checkbox多选框 -->
+            <input type="checkbox" name="likemusic" value="rock"><label style="width: auto;text-align: left;">摇滚</label>
+            <input type="checkbox" name="likemusic" value="pop"><label style="width: auto;text-align: left;">流行</label>
+            <input type="checkbox" name="likemusic" value="folk"><label style="width: auto;text-align: left;">民谣</label>
+            <br>
+            <label style="width: 40%;"></label>
+            <input type="checkbox" name="likemusic" value="electronic"><label style="width: auto;text-align: left;">电子</label>
+            <input type="checkbox" name="likemusic" value="jazz"><label style="width: auto;text-align: left;">爵士</label>
+            <input type="checkbox" name="likemusic" value="absolute-music"><label style="width: auto;text-align: left;">纯音乐</label>
+            <br>
+            <label style="width: 40%;"></label>
+            <input type="checkbox" name="likemusic" value="rap"><label style="width: auto;text-align: left;">说唱</label>
+            <input type="checkbox" name="likemusic" value="metal"><label style="width: auto;text-align: left;">金属</label>
+            <input type="checkbox" name="likemusic" value="classical"><label style="width: auto;text-align: left;">古典</label>
+        </form>
+        <br><br>
+        <!-- a中嵌套img，实现图片超链接 -->
+        <a href="./page1.html" id="image">
+            <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.z21pcKVktXnu-wlAIw8ZUwHaQC?pid=ImgDet&rs=1" style="height: 250px">
+        </a>
+        <br>
+        <!-- 标签内部的样式优先级大于head中的样式 -->
+        <label style="width: 55%;">点击图片实现跳转页面</label>
+</body>
+</html>
+
+<!-- 大部分css样式都是上网自己查的，对照着修改的 -->
