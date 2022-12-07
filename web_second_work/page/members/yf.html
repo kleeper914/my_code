@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../../image/yf-logo/QQ图片20221122165025.jpg">
+        <title>yfのhome</title>
+        <style>
+            #viewSection{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .page{
+                width: 1000px;
+                border: #292421 1px solid;
+                text-align: center;
+            }
+            .page img{
+                width: 1000px;
+                height: 800px;
+            }
+            .page .magicalButton{
+                width: 200px;
+                height: 100px;
+	            background:transparent;	/*按钮背景透明*/
+                font-size: 30px;
+            }
+            a{
+                font-size: 30px;
+            }
+            .right{
+                margin: 0px 0px 0px 1200px;
+            }
+        </style>
+    </head>
+    <!-- 设置背景颜色 -->
+    <body bgcolor="#292421">
+        <audio autoplay="autoplay" loop="loop" preload="auto" src="../../audio/让我留在你身边-陈奕迅.mp3"></audio>
+        <div id="viewSection">
+            <div class="page">
+                <img src="../../image/yf-logo/5ff32d73a7e40_00.png" id="image">
+                <button onclick="changeView()" class="magicalButton">magical button</button>
+                <script>
+                    function changeView(){
+                        document.body.style.backgroundColor = "#191970";
+                        document.getElementById('image').style.width = '800px';
+                        document.getElementById('image').style.height = '600px';
+                        document.getElementById('image').src = '../../image/yf-logo/QQ图片20221122165025.jpg'
+                    }
+                </script>
+            </div>
+        </div>
+        <a href="../startmenu.html">回到首页</a>
+        <a href="../members/cw.html" class="right">上一页</a>
+    </body>
+</html>

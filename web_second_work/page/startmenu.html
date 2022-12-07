@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../image/QQ图片20221121131637.jpg">
+        <title>330のminecraft</title>
+        <style>
+            h1{
+                /* 设置字体的阴影 */
+                text-shadow: 2px 2px 2px black;
+                text-align: center;
+                font-family: "华文行楷";
+                font-size: 80px;
+                background-color: cadetblue;
+                padding: 20px;
+                margin: 0px;
+            }
+            .navigator{
+                width: 100%;
+                height: 50px;
+                background-color: chartreuse;
+            }
+            .firstMenu{
+                /* 设置左对齐 */
+                float: left;
+                text-align: center;
+                width: 33%;
+                height: 50px;
+                border-right: 2px solid white;
+                font-size: 30px;
+                color: white;
+                /* 使list前面的圆点消失 */
+                list-style-type: none;
+
+            }
+            .secondMenu{
+                display: none;
+            }
+            .firstMenu:hover .secondMenu{
+                display: block;
+                text-align: center;
+                background-color: chartreuse;
+            }
+            .firstMenu a{
+                color: white;
+                /* 设置行高 */
+                line-height: 50px;
+            }
+            /* 设置背景图片 */
+            body{
+                background-size: 100%;
+            }
+            #viewSection{
+                width: 100%;
+                height: 650px;
+            }
+            .signupSection{
+                text-align: center;
+            }
+            label{
+                font-size: 30px;
+            }
+            #viewSection .sex{
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                margin: 0px 40px 0px 0px;
+            }
+            button{
+                font-size: 40px;
+                margin: 30px 0px 0px 700px;
+            }
+        </style>
+    </head>
+    <body background="../image/minecraft-2-2048x1152.jpg">
+        <h1>M C 交 流 群</h1>
+        <!-- 设置导航菜单 -->
+        <div class="navigator">
+            <nav>
+                <ul>
+                    <!-- 一级菜单 -->
+                    <li class="firstMenu"><a href="./startmenu.html">首页</a></li>
+                    <li class="firstMenu">成员
+                        <!-- 二级菜单 -->
+                        <ul>
+                            <li class="secondMenu"><a href="./members/cw.html">cw</a></li>
+                            <li class="secondMenu"><a href="./members/yf.html">yf</a></li>
+                        </ul>
+                    </li>
+                    <li class="firstMenu">规划
+                        <ul>
+                            <li class="secondMenu">一中</li>
+                            <li class="secondMenu">四合院</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="viewSection">
+            <form class="signupSection">
+                <!-- input输入字符 -->
+                <br><br><br><br><br><br><br>
+                <label>用户名为:</label><input type="text" name="Name" id="userName">
+                <br>
+                <br>
+                <label>账号:</label><input type="text" name="accouunt-number" id="userAccount">
+                <br>
+                <br>
+                <!-- input输入密码,输入值会显示为* -->
+                <label>密码:</label><input type="password" name="password" id="userPassword">
+                <br>
+                <br>
+            </form>
+
+            <form class="sex">
+                <label style="width: 40%;">性别:</label>
+                <!-- radio单选框需保证name一致 -->
+                <input type="radio" name="sex" value="male"/><label style="width: auto;text-align: left;">男</label>
+                <input type="radio" name="sex" value="female"/><label style="width: auto;text-align: left;">女</label>
+                <input type="radio" name="sex" value="myth"/><label style="width: auto;text-align: left;">谜</label>
+            </form>
+            <br>
+            <button action="" method="post" onclick="clickPost('./ajaxTest.txt')" id="Button">登 录</button>
+            <script>
+                function clickPost(url){
+                    var userName = document.getElementById('userName').value;
+                    var userAccount = document.getElementById('userAccount').value;
+                    var userPassword = document.getElementById('userPassword').value;
+                    var sex = document.getElementsByName('sex');
+                    var userSex;
+                    // 遍历所有单选框，若一单选框被选中，则将其value赋给userSex
+                    for(let i = 0; i < sex.length; i++){
+                        if(sex[i].checked == true)
+                        {
+                            userSex = sex[i].value;
+                        }
+                    }
+                    //使用构造函数创建user对象
+                    function User(userName, userAccount, userPassword, sex){
+                    this.userName = userName
+                    this.userAccount = userAccount
+                    this.userPassword = userPassword
+                    this.sex = sex
+                    }
+                    var user = new User(userName, userAccount, userPassword, userSex);
+                    console.log(user);
+                    //仿照w3school的代码和教程写出的ajax实例
+                    //创建一个xmlhttp变量
+                    var xmlhttp
+                    if(window.XMLHttpRequest)
+                    {
+                        //如果进行ajax请求，则创建一个XMLGHttpRequest对象
+                        xmlhttp = new XMLHttpRequest();
+                    }
+                    //xmlhttp的状态发生变化的函数
+                    xmlhttp.onreadystatechange = function(){
+                        //readyState等于4代表请求完成且响应就绪，status等于200代表返回请求为''OK'
+                        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                            //将Button更改为xmlhttp请求返回的数据
+                            document.getElementById('Button').innerHTML = this.responseText;
+                        }
+                    }
+                    //true代表使用异步方式请求
+                    xmlhttp.open('GET', url, true);
+                    //用于GET请求后，将请求发送到服务器
+                    xmlhttp.send();
+                }
+            </script>
+        </div>
+    </body>
+</html>
